@@ -42,7 +42,7 @@ El comando +scale_shape_manual(values=seq(0,10)) indica que se grafican 10 curva
 ``` { r}
 datos<-read.csv2("curvas_meta_gtaxonomico.csv", sep=",", dec=".")
 curva_datos<-iNEXT(datos, q=0, datatype="abundance", size=NULL, endpoint=NULL, knots=50, se=TRUE, conf=0.95, nboot=5000)
-curvaplot_datos<-ggiNEXT(curvadatos, type=1, se=TRUE, facet.var="none", color.var="site", grey=TRUE)
+curvaplot_datos<-ggiNEXT(curva_datos, type=1, se=TRUE, facet.var="none", color.var="site", grey=TRUE)
 curvaplot_datos + labs(x = "Unidad", y = "Diversidad de especies") +scale_shape_manual(values=seq(0,10)) + geom_jitter(aes(color = site), size = 1, show.legend = FALSE) + 
   facet_wrap(~ site) + theme(legend.position = "none")
 
